@@ -1,26 +1,39 @@
 <?php
-/*
-$leg = ["anana", "ovy", 8, 9, "karoty"];
-foreach($leg as $value) {
-    if($value ==  ) {
- unset($leg);}
+
+//exo1:
+$legumes = ["anana", "ovy", 8, 9, "karoty"];
+foreach($legumes as $key => $value) {
+    if(is_int($value)) {
+        unset($legumes[$key]);
+    };
 }
-var_dump($leg);
-*/
+var_dump($legumes);
+
+//exo2:
 //euro = 4500ar
 //dol = 4600ar
-
-$dev = [
-    "euro" => [15, 32, 25, 22, 5], "dol" => [36, 42, 28,35, 8]
+$devise = [
+    "euro" => [15, 32, 25, 22, 5], 
+    "dol" => [36, 42, 28,35, 8]
 ];
-foreach($dev as $euro => $value) {
-return $dev["euro"] * 4500;
+$devise["euroar"][]=[];
+$devise["dolar"][]=[];
+
+$euroar = [];
+$dolar = [];
+foreach($devise as $key => $values) {
+    foreach($values as $value) {
+        if($key === "euro") {
+        array_push($devise["euroar"] , $value * 4500);
+        }
+        elseif($key === "dol") {
+        array_push($devise["dolar"] , $value * 4600);
+        }
+    }
 }
-var_dump($dev);
+print_r($devise);
 
-//$dol = $dev["dol"] * 4600;
-
-
+//exo3:
 $person = [
     ["rakoto", "rasoa"],["rabe", "koto"]
 ];
